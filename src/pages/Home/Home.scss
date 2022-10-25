@@ -1,96 +1,136 @@
 .home {
-  position: relative;
-  &__bgImg {
-    margin-bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  &__title {
+    color: #fff;
+    font-size: 80px;
+    font-family: qtfq-bold, sans-serif;
   }
-  &__socials {
-    position: absolute;
-    bottom: 40px;
-    right: 80px;
-    &__icon {
-      margin: 0 20px;
-      cursor: pointer;
-    }
+  &__description {
+    color: rgb(179 179 179/1);
+    margin: 20px 0px;
+    font-size: 18px;
   }
-  &__introduction1 {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 40px;
-    line-height: 60px;
-    color: #e40037;
-    writing-mode: vertical-rl;
+  .btn-container {
+    display: flex;
+    flex-direction: row;
   }
-  &__introduction2 {
-    position: absolute;
-    top: 20px;
-    right: 75px;
-    font-family: "Poppins";
-    font-style: normal;
+
+  .btn {
+    background-color: rgba(51, 53, 56, 0.5);
+    border: 1px solid #202933;
+    border-radius: 15px;
+    color: #e7e7e7;
+    box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
     font-weight: 600;
-    font-size: 40px;
-    line-height: 60px;
-    color: #e40037;
-    writing-mode: vertical-rl;
+    transition: background-color, border-color, color, 0.1s ease-in-out;
+    margin: 0px 10px;
+    display: inline-flex;
+    flex-shrink: 0;
+    cursor: pointer;
+    user-select: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 18px;
+    line-height: 1em;
+    min-height: 3rem;
+    text-decoration-line: none;
+    animation: button-pop var(--animation-btn, 0.25s) ease-out;
+    --tw-border-opacity: 1;
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
   }
 }
 
-@media only screen and (max-width: 1140px) {
-  .home {
-    &__socials {
-      right: 40px;
-      &__icon {
-        margin: 0 10px;
+.home.away {
+  transform: translateY(-100%);
+  transition: all 0.6s;
+}
+
+.minimal {
+  background-color: #1d1d1d;
+  height: 100vh;
+  .header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+  }
+  .body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 190px);
+    &__container {
+      border-radius: 15px;
+      background: #0b0b0b;
+      padding: 20px 30px;
+      height: 375px;
+      width: 460px;
+      &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        .connect-wallet-title {
+          font-size: 24px;
+        }
       }
     }
-    &__introduction1 {
-      top: 20px;
-      right: 20px;
-      font-size: 30px;
-      color: #e40037;
-      writing-mode: vertical-rl;
-    }
-    &__introduction2 {
-      top: 20px;
-      right: 75px;
-      font-size: 30px;
-      line-height: 60px;
-      color: #e40037;
+  }
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    padding: 0px 20px;
+    .btn {
+      background-color: rgba(51, 53, 56, 0.5);
+      border: 1px solid #202933;
+      border-radius: 15px;
+      color: #e7e7e7;
+      box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
+      font-weight: 600;
+      transition: background-color, border-color, color, 0.1s ease-in-out;
+      margin: 0px 5px;
+      display: inline-flex;
+      flex-shrink: 0;
+      cursor: pointer;
+      user-select: none;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 2rem;
+      padding: 0px 10px;
+      font-size: 12px;
+      line-height: 1em;
+      min-height: 2rem;
+      text-decoration-line: none;
+      animation: button-pop var(--animation-btn, 0.25s) ease-out;
+      --tw-border-opacity: 1;
+      --tw-bg-opacity: 1;
+      --tw-text-opacity: 1;
     }
   }
 }
 
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 768px) {
   .home {
-    &__socials {
-      right: 20px;
-      bottom: 20px;
-      &__icon {
-        margin: 0 5px;
-        width: 20px;
-        height: 20px;
-      }
-    }
-    &__introduction1 {
-      top: 10px;
-      right: 10px;
-      font-size: 10px;
-      color: #e40037;
-      writing-mode: vertical-rl;
-    }
-    &__introduction2 {
-      top: 10px;
-      right: 25px;
-      font-size: 10px;
-      line-height: 60px;
-      color: #e40037;
+    .btn-container {
+      flex-direction: column;
     }
   }
 }

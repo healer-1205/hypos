@@ -1,10 +1,14 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
+import { Guide } from "../../components/Guide"
 import images from "../../assets"
 import "./Home.scss"
 
 export const Home: React.FC = () => {
   const [transition, setTransition] = useState(false)
+  const [showGuide, setShowGuide] = useState<boolean>(false)
+  const [showFantasy, setShowFantasy] = useState<boolean>(false)
+  const [showCheck, setShowCheck] = useState<boolean>(false)
 
   return (
     <div style={{ position: "relative", overflow: "hidden" }}>
@@ -32,12 +36,37 @@ export const Home: React.FC = () => {
               <span className="connect-wallet-title">Please Connect Wallet</span>
             </div>
           </div>
+          <Guide show={showGuide} />
         </div>
         <div className="footer">
           <div className="btn-group">
-            <button className="btn">Guide ❓</button>
-            <button className="btn">Fantasy Version 🌟</button>
-            <button className="btn">Check WL 🔎</button>
+            <button
+              className="btn"
+              onClick={(e) => {
+                e.preventDefault()
+                setShowGuide(!showGuide)
+              }}
+            >
+              {showGuide ? "HIDE GUIDE ❓" : "GUIDE ❓"}
+            </button>
+            <button
+              className="btn"
+              onClick={(e) => {
+                e.preventDefault()
+                setShowFantasy(!showFantasy)
+              }}
+            >
+              {showFantasy ? "MINIMAL VERSION 🌟" : "FANTASY VERSION 🌟"}
+            </button>
+            <button
+              className="btn"
+              onClick={(e) => {
+                e.preventDefault()
+                setShowCheck(!showCheck)
+              }}
+            >
+              Check WL 🔎
+            </button>
           </div>
           <div>
             <p>solana</p>

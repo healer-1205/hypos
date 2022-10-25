@@ -1,0 +1,33 @@
+.guide {
+  position: absolute;
+  bottom: 90px;
+  left: 20px;
+  background-color: #333538;
+  border-radius: 15px;
+  padding: 20px;
+  width: 450px;
+  &__title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 5px 0px;
+  }
+  &__description {
+    color: #fff;
+    margin: 5px 0px;
+  }
+  .container {
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #e3d664;
+  }
+
+  .caution__description {
+    color: #000;
+    margin: 0px;
+  }
+}
+
+.hidden {
+  display: none;
+}
